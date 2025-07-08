@@ -1,7 +1,7 @@
 ---
 import logo from "../assets/logo.svg";
 import background from "../assets/hero-bg.avif";
-import waves from "../assets/waves.svg";
+import logoCC from "../assets/cerro-colorado.png";
 ---
 
 <header class="bg-[var(--color-neutral)] relative h-[600px] header">
@@ -23,12 +23,11 @@ import waves from "../assets/waves.svg";
     <button class="relative z-20 mt-8 shadow-2xl cursor-pointer">
       <div class="text-sm">🚀 | COMENZAR LA MISIÓN</div>
     </button>
+	<div class="z-24 flex items-center gap-4 mt-48 md:mt-4">
+		<span>Presenta:</span>
+		<img src={logoCC.src} alt="Logo Cerro Colorado">
+	</div>
   </div>
-  <!-- <img
-    src={waves.src}
-    alt="Olas decorativas"
-    class="absolute bottom-0 w-[1280px] md:w-full rotate-180 h-[150px] z-20 fill-amber-400"
-  /> -->
   <svg
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
