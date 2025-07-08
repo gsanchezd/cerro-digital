@@ -1,11 +1,18 @@
+---
+import "../styles/global.css"
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Cerro Digital - Tarapacá</title>
+		<meta name="description" content="Cerro Digital es un espacio de aprendizaje y exploración digital en Tarapacá, Chile." />
+		<meta name="keywords" content="Cerro Digital, Tarapacá, aprendizaje digital, exploración digital, educación, tecnología" />
+		<meta name="author" content="Cerro Digital" />
 	</head>
 	<body>
 		<slot />
@@ -18,5 +25,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: var(--color-neutral);
 	}
 </style>
