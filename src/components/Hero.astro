@@ -10,7 +10,9 @@ import waves from "../assets/waves.svg";
     alt="Imagotipo de Cerro Digital"
     class="relative z-20 pt-10 pl-6 mx-auto"
   />
-  <div class="space-y-4 mt-4 px-4 max-w-[700px] flex flex-col items-center container mx-auto">
+  <div
+    class="space-y-4 mt-8 px-4 max-w-[700px] flex flex-col items-center container mx-auto text-[var(--color-base)]"
+  >
     <h1 class="text-4xl lg:text-5xl relative z-20 text-center px-10 font-bold">
       Desde lo alto del cerro asoma el mañana…
     </h1>
@@ -18,16 +20,26 @@ import waves from "../assets/waves.svg";
       Donde el desierto guarda secreto y el cielo nos enseña a mirar más allá,
       nace una invitación a aprender, explorar y reprogramar el futuro.
     </h2>
-    <button class="relative z-20 mt-8"> 🚀 | COMENZAR LA MISIÓN </button>
+    <button class="relative z-20 mt-8 shadow-2xl cursor-pointer">
+      <div class="text-sm">🚀 | COMENZAR LA MISIÓN</div>
+    </button>
   </div>
   <!-- <img
     src={waves.src}
     alt="Olas decorativas"
     class="absolute bottom-0 w-[1280px] md:w-full rotate-180 h-[150px] z-20 fill-amber-400"
   /> -->
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="absolute bottom-0 z-20 md:w-full h-[100px] w-[1280px]">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-[var(--color-neutral)]"></path>
-    </svg>
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    class="absolute bottom-0 z-20 md:w-full h-[100px] w-[1280px]"
+  >
+    <path
+      d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+      class="fill-[var(--color-neutral)]"></path>
+  </svg>
   <img
     src={background.src}
     alt="Fondo de Hero"
@@ -51,5 +63,101 @@ import waves from "../assets/waves.svg";
   .header {
     color: var(--color-base);
   }
+  /* The secret sauce that enables gradient rotation. NOTE: does not work in all browsers. https://caniuse.com/?search=%40property */
+@property --border-angle-1 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
+}
 
+@property --border-angle-2 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 90deg;
+}
+
+@property --border-angle-3 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 180deg;
+}
+
+
+/* sRGB color. */
+:root {
+	--bright-blue: var(--color-orange);
+	--bright-green: var(--color-green);
+	--bright-red: var(--color-blue);
+	--background: var(--color-neutral);
+	--foreground: var(--color-base);
+	--border-size: 2px;
+	--border-radius: 50px;
+}
+
+@keyframes rotateBackground {
+	to { --border-angle-1: 360deg; }
+}
+
+@keyframes rotateBackground2 {
+	to { --border-angle-2: -270deg; }
+}
+
+@keyframes rotateBackground3 {
+	to { --border-angle-3: 540deg; }
+}
+
+
+button {
+	--border-angle-1: 0deg;
+	--border-angle-2: 90deg;
+	--border-angle-3: 180deg;
+	color: inherit;
+	font-size: 16px;
+	font-family: inherit;
+	border: 0;
+	padding: var(--border-size);
+	display: flex;
+	width: max-content;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	background-image: conic-gradient(
+			from var(--border-angle-1) at 10% 15%,
+			transparent,
+			var(--bright-blue) 10%,
+			transparent 30%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-2) at 70% 60%,
+			transparent,
+			var(--bright-green) 10%,
+			transparent 60%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-3) at 50% 20%,
+			transparent,
+			var(--bright-red) 10%,
+			transparent 50%,
+			transparent
+		);
+	animation: 
+		rotateBackground 3s linear infinite,
+		rotateBackground2 8s linear infinite,
+		rotateBackground3 13s linear infinite;
+}
+
+/* Change this background to transparent to see how the gradient works */
+button div {
+	background: var(--background); 
+	padding: .5em 1.5em;
+	border-radius: calc(var(--border-radius) - var(--border-size));
+	color: var(--foreground);
+}
+
+@font-face {
+	font-family: "Aspekta";
+	font-weight: normal;
+	src: url("https://assets.codepen.io/240751/Aspekta-300.woff2") format("woff2");
+}
 </style>
