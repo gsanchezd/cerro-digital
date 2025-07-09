@@ -1,0 +1,33 @@
+---
+import astronaut from "../assets/universe-girl.avif";
+---
+
+<section
+  class="text-[var(--color-base)] container mx-auto max-w-6xl flex flex-col items-center md:flex-row gap-20 md:gap-10 lg:gap-20 px-4 mt-20 lg:mt-0"
+>
+  <div
+    class="h-[500px] w-[350px] min-w-[350px] rounded-lg border border-[var(--color-astronaut)] relative z-30"
+  >
+    <img
+      src={astronaut.src}
+      alt="Astronauta"
+      class="h-full w-full object-cover rounded-lg absolute scale-110 blur-xl z-0"
+    />
+    <img
+      src={astronaut.src}
+      alt="Astronauta"
+      class="h-full w-full object-cover rounded-lg absolute z-10"
+    />
+  </div>
+  <div class="space-y-6 max-w-xl">
+    <h2 class="text-4xl lg:text-5xl font-bold">Cerro Digital</h2>
+    <h3 class="text-lg">
+      Somos un proyecto que cultiva el futuro en los jóvenes del norte de Chile.
+      Aquí no solo enseñamos programación: avivamos su curiosidad, despertamos
+      talentos y tejemos sueños que se elevan por encima del polvo y el silencio
+      del altiplano. <br />
+      <br />No queremos formar simples usuarios de tecnología, sino impulsar a
+      nuevos creadores de mundos, capaces de imaginar y construir el mañana.
+    </h3>
+  </div>
+</section>
