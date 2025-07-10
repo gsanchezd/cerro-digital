@@ -1,31 +1,54 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
+import ogImage from "../assets/og.avif";
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Cerro Digital - Tarapacá</title>
-		<meta name="description" content="Impulsamos el futuro de jóvenes de Tarapacá con talleres de programación, creatividad digital y pensamiento computacional." />
-		<meta name="keywords" content="Cerro Digital, Tarapacá, aprendizaje digital, exploración digital, educación, tecnología" />
-		<meta name="author" content="Cerro Digital" />
-		<link rel="canonical" href="https://cerrodigitaltarapaca.cl/" />
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Cerro Digital - Tarapacá</title>
+    <meta
+      name="description"
+      content="Impulsamos el futuro de jóvenes de Tarapacá con talleres de programación, creatividad digital y pensamiento computacional."
+    />
+    <meta
+      name="keywords"
+      content="Cerro Digital, Tarapacá, aprendizaje digital, exploración digital, educación, tecnología"
+    />
+    <meta name="author" content="Cerro Digital" />
+    <link rel="canonical" href="https://cerrodigitaltarapaca.cl/" />
+
+    <meta property="og:title" content="Cerro Digital - Tarapacá" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cerrodigitaltarapaca.cl/" />
+    <meta property="og:description" content="Impulsamos el futuro de jóvenes de Tarapacá con talleres de programación, creatividad digital y pensamiento computacional." />
+    <meta
+      property="og:image"
+      content={ogImage.src}
+    />
+    <meta property="og:image:alt" content="Cerro Digital - Tarapacá" />
+
+	<meta property="twitter:image" content={ogImage.src} />
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="Cerro Digital - Tarapacá">
+	<meta property="twitter:description" content="Impulsamos el futuro de jóvenes de Tarapacá con talleres de programación, creatividad digital y pensamiento computacional.">
+	
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: var(--color-neutral);
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral);
+  }
 </style>
