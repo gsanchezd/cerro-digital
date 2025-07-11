@@ -1,12 +1,14 @@
 ---
 import astronaut from "../assets/universe-girl.avif";
+import Logo from "./Logo.astro";
+import logoCC from "../assets/cerro-colorado.png";
 ---
-
+<Logo logo={logoCC} alt="Cerro Colorado" title="Presenta" parentStyle="sm:hidden px-4 text-[var(--color-base)]" />
 <section
-  class="text-[var(--color-base)] container mx-auto max-w-6xl flex flex-col items-center md:flex-row gap-20 md:gap-10 lg:gap-20 px-4 mt-20 lg:mt-0"
+class="text-[var(--color-base)] container mx-auto max-w-6xl flex flex-col items-center md:flex-row gap-20 md:gap-10 lg:gap-20 px-4 mt-14 lg:mt-0"
 >
   <div
-    class="h-[500px] w-[350px] min-w-[350px] rounded-lg border border-[var(--color-astronaut)] relative z-30"
+    class="h-[500px] w-[350px] rounded-lg border border-[var(--color-astronaut)] relative z-20"
   >
     <img
       src={astronaut.src}

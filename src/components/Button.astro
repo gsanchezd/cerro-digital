@@ -1,0 +1,110 @@
+---
+
+const { title = "Button", url } = Astro.props;
+
+---
+
+<a href={url} target="_blank" class="relative z-20 mt-4 shadow-2xl cursor-pointer uppercase">
+  <div class="text-sm">🚀 | {title}</div>
+</a>
+
+
+<style>
+      /* The secret sauce that enables gradient rotation. NOTE: does not work in all browsers. https://caniuse.com/?search=%40property */
+@property --border-angle-1 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
+}
+
+@property --border-angle-2 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 90deg;
+}
+
+@property --border-angle-3 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 180deg;
+}
+
+
+/* sRGB color. */
+:root {
+	--bright-blue: var(--color-orange);
+	--bright-green: var(--color-primary);
+	--bright-red: var(--color-red);
+	--background: var(--color-neutral);
+	--foreground: var(--color-base);
+	--border-size: 1px;
+	--border-radius: 50px;
+}
+
+@keyframes rotateBackground {
+	to { --border-angle-1: 360deg; }
+}
+
+@keyframes rotateBackground2 {
+	to { --border-angle-2: -270deg; }
+}
+
+@keyframes rotateBackground3 {
+	to { --border-angle-3: 540deg; }
+}
+
+
+a {
+	--border-angle-1: 0deg;
+	--border-angle-2: 90deg;
+	--border-angle-3: 180deg;
+	color: inherit;
+	font-size: 16px;
+	font-family: inherit;
+	border: 0;
+	padding: var(--border-size);
+	display: flex;
+	width: max-content;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	background-image: conic-gradient(
+			from var(--border-angle-1) at 10% 15%,
+			transparent,
+			var(--bright-blue) 10%,
+			transparent 30%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-2) at 70% 60%,
+			transparent,
+			var(--bright-green) 10%,
+			transparent 60%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-3) at 50% 20%,
+			transparent,
+			var(--bright-red) 10%,
+			transparent 50%,
+			transparent
+		);
+	animation: 
+		rotateBackground 3s linear infinite,
+		rotateBackground2 8s linear infinite,
+		rotateBackground3 13s linear infinite;
+}
+
+/* Change this background to transparent to see how the gradient works */
+a div {
+	background: var(--background); 
+	padding: .5em 1.5em;
+	border-radius: calc(var(--border-radius) - var(--border-size));
+	color: var(--foreground);
+}
+
+@font-face {
+	font-family: "Aspekta";
+	font-weight: normal;
+	src: url("https://assets.codepen.io/240751/Aspekta-300.woff2") format("woff2");
+}
+</style>

@@ -1,8 +1,8 @@
 ---
-const { logo, alt, title, style } = Astro.props;
+const { logo, alt, title, style, parentStyle } = Astro.props;
 ---
 
-<div class="flex flex-col lg:flex-row items-start gap-2 md:gap-1 lg:gap-4 md:mt-4">
+<div class={`flex flex-col lg:flex-row items-start gap-2 md:gap-1 lg:gap-4 md:mt-4 z-30 ${parentStyle}`}>
   {title && <span>{`${title}:`}</span>}
   <img src={logo.src} alt={`Logo de ${alt}`} class={style} />
 </div>

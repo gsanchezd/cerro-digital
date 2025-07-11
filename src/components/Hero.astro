@@ -2,9 +2,12 @@
 import logo from "../assets/logo.svg";
 import background from "../assets/hero-bg.avif";
 import logoCC from "../assets/cerro-colorado.png";
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+
 ---
 
-<header class="bg-[var(--color-neutral)] relative h-[600px] header">
+<header class="bg-[var(--color-neutral)] relative h-[600px] header overflow-hidden">
   <img
     src={logo.src}
     alt="Imagotipo de Cerro Digital"
@@ -13,20 +16,14 @@ import logoCC from "../assets/cerro-colorado.png";
   <div
     class="space-y-4 mt-8 px-4 max-w-[700px] flex flex-col items-center container mx-auto text-[var(--color-base)]"
   >
-    <h1 class="text-4xl lg:text-5xl relative z-20 text-center px-10 font-bold">
+    <h1 class="text-4xl lg:text-5xl relative z-20 text-center lg:px-10 font-bold">
       Desde lo alto del cerro asoma el mañana…
     </h1>
-    <h2 class="relative z-20 text-center px-6 text-lg lg:text-xl text-pretty">
-      Donde el desierto guarda secreto y el cielo nos enseña a mirar más allá,
-      nace una invitación a aprender, explorar y reprogramar el futuro.
+    <h2 class="relative z-20 text-center px-2 lg:px-6 text-lg lg:text-xl text-pretty">
+      Del desierto al cielo: una invitación a aprender y reprogramar el futuro.
     </h2>
-    <button class="relative z-20 mt-8 shadow-2xl cursor-pointer">
-      <div class="text-sm">🚀 | COMENZAR LA MISIÓN</div>
-    </button>
-	<div class="z-24 flex items-center gap-4 mt-48 md:mt-4">
-		<span>Presenta:</span>
-		<img src={logoCC.src} alt="Logo Cerro Colorado">
-	</div>
+    <Button title="COMENZAR LA MISIÓN" url="https://cerrodigital.desafiolatam.com/" />
+	<Logo logo={logoCC} alt="Cerro Colorado" title="Presenta" parentStyle="mt-4 hidden sm:inline-block" />
   </div>
   <svg
     data-name="Layer 1"
@@ -62,101 +59,4 @@ import logoCC from "../assets/cerro-colorado.png";
   .header {
     color: var(--color-base);
   }
-  /* The secret sauce that enables gradient rotation. NOTE: does not work in all browsers. https://caniuse.com/?search=%40property */
-@property --border-angle-1 {
-	syntax: "<angle>";
-	inherits: true;
-	initial-value: 0deg;
-}
-
-@property --border-angle-2 {
-	syntax: "<angle>";
-	inherits: true;
-	initial-value: 90deg;
-}
-
-@property --border-angle-3 {
-	syntax: "<angle>";
-	inherits: true;
-	initial-value: 180deg;
-}
-
-
-/* sRGB color. */
-:root {
-	--bright-blue: var(--color-orange);
-	--bright-green: var(--color-primary);
-	--bright-red: var(--color-red);
-	--background: var(--color-neutral);
-	--foreground: var(--color-base);
-	--border-size: 1px;
-	--border-radius: 50px;
-}
-
-@keyframes rotateBackground {
-	to { --border-angle-1: 360deg; }
-}
-
-@keyframes rotateBackground2 {
-	to { --border-angle-2: -270deg; }
-}
-
-@keyframes rotateBackground3 {
-	to { --border-angle-3: 540deg; }
-}
-
-
-button {
-	--border-angle-1: 0deg;
-	--border-angle-2: 90deg;
-	--border-angle-3: 180deg;
-	color: inherit;
-	font-size: 16px;
-	font-family: inherit;
-	border: 0;
-	padding: var(--border-size);
-	display: flex;
-	width: max-content;
-	border-radius: var(--border-radius);
-	background-color: transparent;
-	background-image: conic-gradient(
-			from var(--border-angle-1) at 10% 15%,
-			transparent,
-			var(--bright-blue) 10%,
-			transparent 30%,
-			transparent
-		),
-		conic-gradient(
-			from var(--border-angle-2) at 70% 60%,
-			transparent,
-			var(--bright-green) 10%,
-			transparent 60%,
-			transparent
-		),
-		conic-gradient(
-			from var(--border-angle-3) at 50% 20%,
-			transparent,
-			var(--bright-red) 10%,
-			transparent 50%,
-			transparent
-		);
-	animation: 
-		rotateBackground 3s linear infinite,
-		rotateBackground2 8s linear infinite,
-		rotateBackground3 13s linear infinite;
-}
-
-/* Change this background to transparent to see how the gradient works */
-button div {
-	background: var(--background); 
-	padding: .5em 1.5em;
-	border-radius: calc(var(--border-radius) - var(--border-size));
-	color: var(--foreground);
-}
-
-@font-face {
-	font-family: "Aspekta";
-	font-weight: normal;
-	src: url("https://assets.codepen.io/240751/Aspekta-300.woff2") format("woff2");
-}
 </style>
