@@ -1,0 +1,41 @@
+---
+import Card from "./Card.astro";
+import desert from "../assets/desert.webp";
+import python from "../assets/python.webp";
+
+const courses = [
+  {
+    title: "Fundamentos de Programación con Python",
+    image: python.src,
+    subtitle: "Para estudiantes de 1° y 2° medio",
+    description: "Sumérgete en el mundo de la lógica y la resolución de problemas con Python. En este taller, aprenderás a dar tus primeros pasos en la programación, creando desde algoritmos simples hasta tus primeros programas funcionales.",
+    items: [
+        "🧩 Pensamiento lógico y computacional",
+        "💻 Introducción a la sintaxis de Python",
+        "🔍 Proyectos prácticos para aprender haciendo"
+    ],
+  },
+    {
+        title: "Mi Primer Videojuego del Desierto",
+        image: desert.src,
+        subtitle: "Para estudiantes de 5° a 8° básico",
+        description: "Explora la magia del desierto creando tu propio videojuego con Scratch y Code.org. Aprende a programar historias, personajes y desafíos inspirados en el paisaje único de nuestra región, dando vida a un mundo donde tú eres el creador.",
+        items: [
+            "🏜️ Inspirada en el desierto de Tarapacá",
+            "🐾 Personajes y retos diseñados por ti",
+            "🔧 Aprende programación visual de forma lúdica"
+        ],
+    },
+];
+
+---
+
+<section class="text-[var(--color-base)] container mx-auto max-w-6xl mt-20 lg:mt-40 px-4">
+  <h3 class="text-4xl lg:text-5xl font-bold text-center text-pretty ">
+    El programa considera
+  </h3>
+  <div class="flex flex-col md:flex-row justify-center gap-6 lg:gap-10 items-start mt-8">
+    <Card course={courses[0]} />
+    <Card course={courses[1]} styles="mt-6" />
+  </div>
+</section>
