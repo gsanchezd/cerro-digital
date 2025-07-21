@@ -1,0 +1,16 @@
+---
+import Logo from "./Logo.astro";
+
+import CerroDigitalLogo from "../assets/logo.svg";
+import DesafioLatamLogo from "../assets/dl.png";
+---
+
+
+<div class="flex flex-col md:flex-row mx-auto max-w-6xl items-center mt-10 gap-10">
+    <div class="flex justify-between w-fit items-center gap-8">
+    <Logo logo={CerroDigitalLogo} alt="Cerro Digital"/>
+    x
+    <Logo logo={DesafioLatamLogo} alt="Desafío Latam"  />
+    </div>
+    <p class="w-md text-[var(--color-base)]">Al finalizar, cada estudiante contará con un diploma que certifica la competencia adquirida.</p>
+</div>
