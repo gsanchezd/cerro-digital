@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+
+import Button from "./Button.astro";
+
+import Terminal from "../assets/terminal.webp";
+import Programming from "../assets/programming-girl.avif";
+---
+
+<section
+  class="bg-[var(--color-base)] mt-40 h-[850px] sm:h-[900px] lg:h-[700px] text-[var(--color-neutral)] px-4"
+>
+  <div class="container mx-auto max-w-6xl pt-16 h-full relative">
+    <h3 class="text-4xl lg:text-5xl font-bold text-left md:text-center lg:text-left text-pretty">
+      Piensa. Crea. Programa.
+    </h3>
+    <div class="flex relative mt-40 lg:mt-10 w-full">
+      <Image
+        src={Terminal}
+        alt="Terminal"
+        height={337}
+        class="object-contain absolute z-20 top-12 left-1/2 -translate-[50%] lg:left-0 lg:-translate-[0%]"
+      />
+      <Image
+        src={Programming}
+        alt="Programming"
+        height={436}
+        class="object-cover lg:object-contain absolute rounded-lg z-10 right-1/2 translate-x-1/2 lg:right-96 top-40 lg:top-0"
+      />
+    </div>
+    <div class="bottom-12 left-1/2 translate-x-[-50%] absolute z-30">
+      <Button
+        title="COMENZAR LA MISIÓN"
+        url="https://cerrodigital.desafiolatam.com/"
+      />
+    </div>
+  </div>
+  <div>
+    <!-- DIVISOR -->
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      class="absolute -top-24 z-20 md:w-full h-[100px] w-[1280px]"
+    >
+      <path
+        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+        class="fill-[var(--color-base)]"></path>
+    </svg>
+  </div>
+</section>
