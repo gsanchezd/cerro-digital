@@ -4,10 +4,12 @@ import background from "../assets/hero-bg.avif";
 import logoCC from "../assets/cerro-colorado.png";
 import Button from "./Button.astro";
 import Logo from "./Logo.astro";
-
 ---
 
-<header class="bg-[var(--color-neutral)] relative h-[600px] header overflow-hidden" role="banner">
+<header
+  class="bg-[var(--color-neutral)] relative h-[600px] header overflow-hidden"
+  role="banner"
+>
   <img
     src={logo.src}
     alt="Imagotipo de Cerro Digital"
@@ -16,14 +18,26 @@ import Logo from "./Logo.astro";
   <div
     class="space-y-4 mt-8 px-4 max-w-[700px] flex flex-col items-center container mx-auto text-[var(--color-base)]"
   >
-    <h1 class="text-4xl lg:text-5xl relative z-20 text-center lg:px-10 font-bold">
+    <h1
+      class="text-4xl lg:text-5xl relative z-20 text-center lg:px-10 font-bold"
+    >
       Desde lo alto del cerro asoma el mañana…
     </h1>
-    <p class="relative z-20 text-center px-2 lg:px-6 text-lg lg:text-xl text-pretty">
+    <p
+      class="relative z-20 text-center px-2 lg:px-6 text-lg lg:text-xl text-pretty"
+    >
       Del desierto al cielo: una invitación a aprender y reprogramar el futuro.
     </p>
-    <Button title="COMENZAR LA MISIÓN" url="https://cerrodigital.desafiolatam.com/" />
-	<Logo logo={logoCC} alt="Cerro Colorado" title="Presenta" parentStyle="mt-4 hidden sm:inline-block" />
+    <Button
+      title="COMENZAR LA MISIÓN"
+      url="https://cerrodigital.desafiolatam.com/"
+    />
+    <Logo
+      logo={logoCC}
+      alt="Cerro Colorado"
+      title="Presenta"
+      parentStyle="mt-4 hidden sm:inline-block"
+    />
   </div>
   <svg
     data-name="Layer 1"
