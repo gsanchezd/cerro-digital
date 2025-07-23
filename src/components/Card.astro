@@ -9,7 +9,7 @@ const { course, styles } = Astro.props;
 >
 <img loading="lazy" src={course.image} alt={course.title} class="w-full h-auto rounded-md" />
   <h5 class="text-xl font-bold">{course.title}</h5>
-  <h6 class="underline">{course.subtitle}</h6>
+  <p class="underline">{course.subtitle}</p>
   <p class="text-left">{course.description}</p>
   <ul class="space-y-1 text-sm">
     {course.items.map((item: string) => (
