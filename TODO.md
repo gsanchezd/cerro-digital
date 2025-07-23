@@ -6,3 +6,4 @@ Tasks to do
 ### Completed Column ✓
 - [x] Add font
 - [x] Add radial color blur to the background
+- [x] Readme
