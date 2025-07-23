@@ -7,3 +7,4 @@ Tasks to do
 - [x] Add font
 - [x] Add radial color blur to the background
 - [x] Readme
+- [x] Change Graphik to Montserrat font

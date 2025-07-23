@@ -1,28 +1,13 @@
 @import "tailwindcss";
 
-/* Register your custom font family and tell the browser where to find it. */
-@font-face {
-  font-family: 'Graphik-Bold-Trial';
-  src: url('/fonts/Graphik-Bold-Trial.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Graphik-Regular-Trial';
-  src: url('/fonts/Graphik-Regular-Trial.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Graphik-Bold-Trial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 p, span, a, li, button {
-  font-family: 'Graphik-Regular-Trial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 :root {
