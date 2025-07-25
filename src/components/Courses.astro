@@ -3,31 +3,73 @@ import Disclaimer from "./Disclaimer.astro";
 import Card from "./Card.astro";
 import desert from "../assets/desert.webp";
 import python from "../assets/python.webp";
+import Considerations from "./Considerations.astro";
+import Schools from "./Schools.astro";
+
+import Huara from "../assets/colegios/liceo-huara.svg";
+import Alcalde from "../assets/colegios/liceo-alcalde.webp";
+import Metodista from "../assets/colegios/liceo-metodista.webp";
+import Dsm from "../assets/colegios/liceo-dsm.webp";
+import Luis from "../assets/colegios/liceo-luis-cruz-martinez.webp";
+import Ingles from "../assets/colegios/colegio-ingles.webp";
 
 const courses = [
   {
-    title: "Fundamentos de Programación con Python",
+    title: "Fundamentos de programación básica con Python",
     image: python.src,
-    subtitle: "Para estudiantes de 1° y 2° medio",
+    subtitle: "Para estudiantes de enseñanza media",
     description:
       "Sumérgete en el mundo de la lógica y la resolución de problemas con Python. En este taller, aprenderás a dar tus primeros pasos en la programación, creando desde algoritmos simples hasta tus primeros programas funcionales.",
     items: [
       "🧩 Pensamiento lógico y computacional",
       "💻 Introducción a la sintaxis de Python",
-      "🔍 Proyectos prácticos para aprender haciendo",
+      "🔍 Proyecto práctico para aprender haciendo",
     ],
   },
   {
-    title: "Mi Primer Videojuego del Desierto",
+    title: "Desafíos con Scratch y Code.org",
     image: desert.src,
-    subtitle: "Para estudiantes de 5° a 8° básico",
+    subtitle: "Para estudiantes de educación básica",
     description:
-      "Explora la magia del desierto creando tu propio videojuego con Scratch y Code.org. Aprende a programar historias, personajes y desafíos inspirados en el paisaje único de nuestra región, dando vida a un mundo donde tú eres el creador.",
+      "Explora la magia de la programación creando tus propios videojuegos con Scratch y Code.org. Aprende a programar historias, personajes y desafíos inspirados en la región, dando vida a un mundo donde tú eres el creador.",
     items: [
-      "🏜️ Inspirada en el desierto de Tarapacá",
+      "🏜️ Inspirados en la región",
       "🐾 Personajes y retos diseñados por ti",
       "🔧 Aprende programación visual de forma lúdica",
     ],
+  },
+];
+
+const schools = [
+  {
+    name: "Liceo de Huara",
+    comuna: "Huara",
+    image: Huara,
+  },
+  {
+    name: "Liceo Alcalde Sergio González",
+    comuna: "Pozo Almonte",
+    image: Alcalde,
+  },
+  {
+    name: "Colegio Metodista Robert Johnson",
+    comuna: "Alto Hospicio",
+    image: Metodista,
+  },
+  {
+    name: "Liceo Bicentenario Domingo Santa María (Anexo)",
+    comuna: "Alto Hospicio",
+    image: Dsm,
+  },
+  {
+    name: "Liceo Luis Cruz Martínez",
+    comuna: "Iquique",
+    image: Luis,
+  },
+  {
+    name: "Colegio Inglés",
+    comuna: "Iquique",
+    image: Ingles,
   },
 ];
 ---
@@ -35,14 +77,19 @@ const courses = [
 <section
   class="text-[var(--color-base)] relative container mx-auto max-w-6xl mt-20 lg:mt-40 px-4 flex flex-col items-center justify-center"
 >
-  <h3 class="text-4xl lg:text-5xl font-bold text-center text-prett">
-    Tecnologia para crear
-  </h3>
   <div
-    class="flex flex-col md:flex-row justify-center gap-6 lg:gap-10 items-start mt-8"
+    class="flex flex-col lg:flex-row flex-wrap justify-center gap-6 lg:gap-10 items-center mt-8"
   >
     <Card course={courses[0]} />
-    <Card course={courses[1]} styles="mt-6" />
+    <Considerations title="El módulo considera" cardOne="20 horas pedagógicas" cardTwo="Clases en laboratorios" cardThree="Certificado de competencias adquiridas" />
+    <Schools schools={schools} />
+  </div>
+  <div
+    class="flex flex-col lg:flex-row flex-wrap justify-center gap-6 lg:gap-10 items-center mt-40"
+  >
+    <Card course={courses[1]} />
+    <Considerations title="Los talleres consideran" cardOne="2 horas pedagógicas por taller" cardTwo="Clases en laboratorios" cardThree="Certificación de competencias adquiridas" />
+    <Schools schools={[schools[0]]} />
   </div>
   <Disclaimer />
   <div

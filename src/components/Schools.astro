@@ -1,70 +1,24 @@
 ---
 import { Image } from 'astro:assets';
 
-import Huara from "../assets/colegios/liceo-huara.svg";
-import Alcalde from "../assets/colegios/liceo-alcalde.webp";
-import Metodista from "../assets/colegios/liceo-metodista.webp";
-import Dsm from "../assets/colegios/liceo-dsm.webp";
-import Luis from "../assets/colegios/liceo-luis-cruz-martinez.webp";
-import Ingles from "../assets/colegios/colegio-ingles.webp";
-
-const schools = [
-  {
-    name: "Liceo de Huara",
-    comuna: "Huara",
-    image: Huara,
-  },
-  {
-    name: "Liceo Alcalde Sergio González",
-    comuna: "Pozo Almonte",
-    image: Alcalde,
-  },
-  {
-    name: "Colegio Metodista Robert Johnson",
-    comuna: "Alto Hospicio",
-    image: Metodista,
-  },
-  {
-    name: "Liceo Bicentenario Domingo Santa María (Anexo)",
-    comuna: "Alto Hospicio",
-    image: Dsm,
-  },
-  {
-    name: "Liceo Luis Cruz Martínez",
-    comuna: "Iquique",
-    image: Luis,
-  },
-  {
-    name: "Colegio Inglés",
-    comuna: "Iquique",
-    image: Ingles,
-  },
-];
+const { schools } = Astro.props;
 
 
-type School = {
-    name: string;
-    comuna: string;
-    image: typeof Huara;
-};
 ---
 
-<section class="text-[var(--color-base)] container mx-auto max-w-6xl mt-20 lg:mt-40 relative">
-  <h3 class="text-4xl lg:text-5xl font-bold text-center text-pretty">
-    Aquí comienza la aventura digital
-  </h3>
+<section class="text-[var(--color-base)] container mx-auto w-full relative">
   <div class="flex flex-wrap items-center justify-center gap-10 mt-12 px-4">
     {
       Object.entries(
-        schools.reduce((acc: { [key: string]: School[] }, school: School) => {
+        schools.reduce((acc, school) => {
           acc[school.comuna] = acc[school.comuna] || [];
           acc[school.comuna].push(school);
           return acc;
-        }, {} as { [key: string]: School[] })
-      ).map(([comuna, schoolsInComuna]: any) => (
+        }, {})
+      ).map(([comuna, schoolsInComuna]) => (
         <div class="flex flex-col items-center h-72 md:h-78 grow">
           <div class="flex gap-6 h-full">
-            {schoolsInComuna.map((school: School) => (
+        {schoolsInComuna.map((school) => (
               <div class="mb-4 h-full flex flex-col items-center">
                 <Image
                 loading="lazy"
