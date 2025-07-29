@@ -12,6 +12,7 @@ import Metodista from "../assets/colegios/liceo-metodista.webp";
 import Dsm from "../assets/colegios/liceo-dsm.webp";
 import Luis from "../assets/colegios/liceo-luis-cruz-martinez.webp";
 import Ingles from "../assets/colegios/colegio-ingles.webp";
+import Mamina from "../assets/colegios/colegio-mamina.webp";
 
 const courses = [
   {
@@ -40,7 +41,15 @@ const courses = [
   },
 ];
 
-const schools = [
+const schoolsWorkshop = [
+  {
+    name: "Escuela Básica Mamiña",
+    comuna: "Pozo Almonte",
+    image: Mamina,
+  },
+];
+
+const schoolsModule = [
   {
     name: "Liceo de Huara",
     comuna: "Huara",
@@ -82,14 +91,14 @@ const schools = [
   >
     <Card course={courses[0]} />
     <Considerations title="El módulo considera" cardOne="20 horas pedagógicas" cardTwo="Clases en laboratorios" cardThree="Certificado de competencias adquiridas" />
-    <Schools schools={schools} />
+    <Schools schools={schoolsModule} />
   </div>
   <div
     class="flex flex-col lg:flex-row flex-wrap justify-center gap-6 lg:gap-10 items-center mt-40"
   >
     <Card course={courses[1]} />
     <Considerations title="Los talleres consideran" cardOne="2 horas pedagógicas por taller" cardTwo="Clases en laboratorios" cardThree="Certificación de competencias adquiridas" />
-    <Schools schools={[schools[0]]} />
+    <Schools schools={schoolsWorkshop} />
   </div>
   <Disclaimer />
   <div

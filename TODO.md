@@ -8,3 +8,4 @@ Tasks to do
 - [x] Add radial color blur to the background
 - [x] Readme
 - [x] Change Graphik to Montserrat font
+- [x] Add Mamina school on workshop section
